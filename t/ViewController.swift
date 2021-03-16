@@ -10,7 +10,7 @@ import AVFoundation
 
 class ViewController: UIViewController {
     
-    //音調＆速度Label顯示到小數點第二位
+    //音調及速度的Label顯示到小數點第二位（ "%.2f" ）為設定之數值
     @IBAction func changeSlider(_ sender: Any) {
         speedRateText.text = String(format: "%.2f", speedRate.value)
         voiceTypeText.text = String(format: "%.2f", voiceType.value)
@@ -23,7 +23,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var speedRate: UISlider! //速度滑軌
     @IBOutlet weak var loveTextField: UITextField! //文字輸入框
     
-    //中文加入音調＆速度功能
+    //讀取TextField內容、播放、新增語言(中文)、音調與速度功能
     @IBAction func buttunPressed(_ sender: Any) {    //老虎頭播放鍵連接至這裡
         
         let speechUtterance = AVSpeechUtterance(string: loveTextField.text!)
@@ -38,8 +38,6 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
-
 }
 
 
